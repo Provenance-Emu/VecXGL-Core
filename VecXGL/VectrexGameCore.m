@@ -141,9 +141,9 @@ VectrexGameCore *g_core;
     loadVecxState(state);
 }
 
-- (OEIntSize)aspectSize
+- (CGSize)aspectSize
 {
-    return (OEIntSize){videoWidth, videoHeight};
+    return (CGSize){videoWidth, videoHeight};
 }
 
 - (CGRect)screenRect
@@ -151,7 +151,7 @@ VectrexGameCore *g_core;
     return CGRectMake(0, 0, videoWidth, videoHeight);
 }
 
-- (OEIntSize)bufferSize
+- (CGSize)bufferSize
 {
     return CGSizeMake(videoWidth, videoHeight);
 }
