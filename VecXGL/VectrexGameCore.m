@@ -28,12 +28,12 @@
 
 #import "VectrexGameCore.h"
 
-#import <OpenEmuBase/OERingBuffer.h>
-#import <OpenGL/gl.h>
+
+#import <OpenGLES/ES2/GL.h>
 #import "vecx.h"
 #import "osint.h"
 
-@interface VectrexGameCore () <OEVectrexSystemResponderClient>
+@interface VectrexGameCore () <PVVectrexSystemResponderClient>
 {
     int videoWidth, videoHeight;
     NSString *romPath;
@@ -201,21 +201,21 @@ VectrexGameCore *g_core;
     return 1;
 }
 
-- (oneway void)didMoveVectrexJoystickDirection:(OEVectrexButton)button withValue:(CGFloat)value forPlayer:(NSUInteger)player
+- (oneway void)didMoveVectrexJoystickDirection:(PVVectrexButton)button withValue:(CGFloat)value forPlayer:(NSUInteger)player
 {
     player -= 1;
     switch (button)
     {
-        case OEVectrexAnalogUp:
+        case PVVectrexAnalogUp:
             yAxis[player][0] = value * INT8_MAX;
             break;
-        case OEVectrexAnalogDown:
+        case PVVectrexAnalogDown:
             yAxis[player][1] = value * INT8_MIN;
             break;
-        case OEVectrexAnalogLeft:
+        case PVVectrexAnalogLeft:
             xAxis[player][0] = value * INT8_MIN;
             break;
-        case OEVectrexAnalogRight:
+        case PVVectrexAnalogRight:
             xAxis[player][1] = value * INT8_MAX;
             break;
         default:
@@ -224,7 +224,7 @@ VectrexGameCore *g_core;
 }
 
 
-- (oneway void)didPushVectrexButton:(OEVectrexButton)button forPlayer:(NSUInteger)player
+- (oneway void)didPushVectrexButton:(PVVectrexButton)button forPlayer:(NSUInteger)player
 {
     player -= 1;
     padData[player][button] = 1;
@@ -232,7 +232,7 @@ VectrexGameCore *g_core;
     osint_btnDown(button);
 }
 
-- (oneway void)didReleaseVectrexButton:(OEVectrexButton)button forPlayer:(NSUInteger)player
+- (oneway void)didReleaseVectrexButton:(PVVectrexButton)button forPlayer:(NSUInteger)player
 {
     player -= 1;
     padData[player][button] = 0;

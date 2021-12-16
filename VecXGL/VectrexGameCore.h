@@ -24,14 +24,13 @@
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Cocoa/Cocoa.h>
-#import <OpenEmuBase/OEGameCore.h>
-#import "OEVectrexSystemResponderClient.h"
+#import <Foundation/Foundation.h>
+#import <PVSupport/PVSupport.h>
 
-OE_EXPORTED_CLASS
-@interface VectrexGameCore : OEGameCore {
+__attribute__((visibility("default")))
+@interface VectrexGameCore : PVEmulatorCore <PVVectrexSystemResponderClient> {
     @public
-    uint8_t padData[2][OEVectrexButtonCount];
+    uint8_t padData[2][PVVectrexButtonCount];
     uint8_t xAxis[2][2];
     uint8_t yAxis[2][2];
 }
