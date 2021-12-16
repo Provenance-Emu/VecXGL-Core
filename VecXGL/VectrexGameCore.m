@@ -27,7 +27,7 @@
 // We need to mess with core internals
 
 #import "VectrexGameCore.h"
-
+@import PVSupport;
 
 #import <OpenGLES/ES2/GL.h>
 #import "vecx.h"
@@ -68,8 +68,7 @@ VectrexGameCore *g_core;
     return YES;
 }
 
-- (void)executeFrame
-{
+- (void)executeFrameSkippingFrame:(BOOL)skip {
     // late init of the overlay
 
     // check fix, has to be REloaded at each frame, i mean really ?
@@ -84,9 +83,14 @@ VectrexGameCore *g_core;
     glFlush();
 }
 
+- (void)executeFrame
+{
+    [self executeFrameSkippingFrame:NO];
+}
+
 - (void)startEmulation
 {
-    if(self.rate != 0) return;
+//    if(self.rate != 0) return;
 
     [super startEmulation];
     vecx_reset();
@@ -131,8 +135,8 @@ VectrexGameCore *g_core;
     }
 
     if (sizeof(VECXState) != data.length) {
-        block(NO, [NSError errorWithDomain:OEGameCoreErrorDomain code:OEGameCoreCouldNotLoadStateError userInfo:@{
-            NSLocalizedFailureReasonErrorKey: @"THe size of the saved file is different from the size of the state.",
+        block(NO, [NSError errorWithDomain:@"org.provenance.GameCore.ErrorDomain" code:-1 userInfo:@{
+            NSLocalizedFailureReasonErrorKey: @"The size of the saved file is different from the size of the state.",
         }]);
         return;
     }
@@ -161,6 +165,15 @@ VectrexGameCore *g_core;
 //    return OEGameCoreRenderingOpenGL2Video;
 //}
 
+- (BOOL)rendersToOpenGL
+{
+    return YES;
+}
+
+//- (BOOL)isDoubleBuffered {
+//    return YES;
+//}
+
 - (const void *)videoBuffer
 {
     return NULL;
@@ -173,12 +186,12 @@ VectrexGameCore *g_core;
 
 - (GLenum)pixelType
 {
-    return GL_UNSIGNED_INT_8_8_8_8;
+    return GL_UNSIGNED_BYTE; //GL_UNSIGNED_SHORT_4_4_4_4;
 }
 
 - (GLenum)internalPixelFormat
 {
-    return GL_RGB8;
+    return GL_RGBA;
 }
 
 - (double)audioSampleRate
@@ -201,7 +214,7 @@ VectrexGameCore *g_core;
     return 1;
 }
 
-- (oneway void)didMoveVectrexJoystickDirection:(PVVectrexButton)button withValue:(CGFloat)value forPlayer:(NSUInteger)player
+- (oneway void)didMoveVectrexJoystickDirection:(PVVectrexButton)button withValue:(CGFloat)value forPlayer:(NSInteger)player
 {
     player -= 1;
     switch (button)
@@ -223,8 +236,8 @@ VectrexGameCore *g_core;
     }
 }
 
-
-- (oneway void)didPushVectrexButton:(PVVectrexButton)button forPlayer:(NSUInteger)player
+// oneway void
+- (void)didPushVectrexButton:(PVVectrexButton)button forPlayer:(NSInteger)player
 {
     player -= 1;
     padData[player][button] = 1;
@@ -232,13 +245,13 @@ VectrexGameCore *g_core;
     osint_btnDown(button);
 }
 
-- (oneway void)didReleaseVectrexButton:(PVVectrexButton)button forPlayer:(NSUInteger)player
+// oneway void
+- (void)didReleaseVectrexButton:(PVVectrexButton)button forPlayer:(NSInteger)player
 {
     player -= 1;
     padData[player][button] = 0;
     
     osint_btnUp(button);
 }
-
 
 @end

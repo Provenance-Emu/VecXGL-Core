@@ -1,8 +1,7 @@
 #ifndef __OSINT_H
 #define __OSINT_H
-#import <OpenGL/gl.h>
-#import <OpenGL/glu.h>
-#include "OEVectrexSystemResponderClient.h"
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
 
 #define EMU_TIMER                   20			// milliseconds per frame
 #define DEFAULT_WIDTH               330 * 2
@@ -18,8 +17,8 @@ int osint_msgs (void);
 void openCart(const char *romName);
 int osint_defaults (void);
 void osint_gencolors (void);
-void osint_btnDown(OEVectrexButton btn);
-void osint_btnUp(OEVectrexButton btn);
+void osint_btnDown(PVVectrexButton btn);
+void osint_btnUp(PVVectrexButton btn);
 void load_overlay(char *filename);
 
 extern uint8_t *pWave;

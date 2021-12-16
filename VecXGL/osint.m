@@ -286,18 +286,18 @@ void osint_render (void)
 
     }
 
-void osint_btnDown(OEVectrexButton btn) {
+void osint_btnDown(PVVectrexButton btn) {
     switch(btn) {
-        case OEVectrexButton1:
+        case PVVectrexButton1:
             snd_regs[14] &= ~0x01;
             break;
-        case OEVectrexButton2:
+        case PVVectrexButton2:
             snd_regs[14] &= ~0x02;
             break;
-        case OEVectrexButton3:
+        case PVVectrexButton3:
             snd_regs[14] &= ~0x04;
             break;
-        case OEVectrexButton4:
+        case PVVectrexButton4:
             snd_regs[14] &= ~0x08;
             break;
         case OEVectrexAnalogUp:
@@ -317,18 +317,18 @@ void osint_btnDown(OEVectrexButton btn) {
     }
 }
 
-void osint_btnUp(OEVectrexButton btn) {
+void osint_btnUp(PVVectrexButton btn) {
     switch(btn) {
-        case OEVectrexButton1:
+        case PVVectrexButton1:
             snd_regs[14] |= 0x01;
             break;
-        case OEVectrexButton2:
+        case PVVectrexButton2:
             snd_regs[14] |= 0x02;
             break;
-        case OEVectrexButton3:
+        case PVVectrexButton3:
             snd_regs[14] |= 0x04;
             break;
-        case OEVectrexButton4:
+        case PVVectrexButton4:
             snd_regs[14] |= 0x08;
             break;
         case OEVectrexAnalogUp:

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PVCoreIdentifier</key>
+	<string>com.provenance.core.vecxgl</string>
+	<key>PVPrincipleClass</key>
+	<string>VectrexGameCore</string>
+	<key>PVProjectName</key>
+	<string>vecxgl</string>
+	<key>PVSupportedSystems</key>
+	<array>
+		<string>com.provenance.vectrex</string>
+	</array>
+	<key>PVProjectURL</key>
+	<string></string>
+	<key>PVProjectVersion</key>
+	<string></string>
+</dict>
+</plist>

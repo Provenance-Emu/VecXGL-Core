@@ -2,7 +2,8 @@
 // Overlay info
 // JH 2007
 
-#import <OpenGL/gl.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
 
 typedef struct								// Create A Structure
 {
