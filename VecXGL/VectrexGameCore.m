@@ -156,10 +156,10 @@ VectrexGameCore *g_core;
     return CGSizeMake(videoWidth, videoHeight);
 }
 
-- (OEGameCoreRendering)gameCoreRendering
-{
-    return OEGameCoreRenderingOpenGL2Video;
-}
+//- (OEGameCoreRendering)gameCoreRendering
+//{
+//    return OEGameCoreRenderingOpenGL2Video;
+//}
 
 - (const void *)videoBuffer
 {
