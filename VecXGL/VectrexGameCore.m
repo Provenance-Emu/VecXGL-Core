@@ -146,14 +146,14 @@ VectrexGameCore *g_core;
     return (OEIntSize){videoWidth, videoHeight};
 }
 
-- (OEIntRect)screenRect
+- (CGRect)screenRect
 {
-    return OEIntRectMake(0, 0, videoWidth, videoHeight);
+    return CGRectMake(0, 0, videoWidth, videoHeight);
 }
 
 - (OEIntSize)bufferSize
 {
-    return OEIntSizeMake(videoWidth, videoHeight);
+    return CGSizeMake(videoWidth, videoHeight);
 }
 
 - (OEGameCoreRendering)gameCoreRendering
