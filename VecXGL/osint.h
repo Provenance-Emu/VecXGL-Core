@@ -2,6 +2,7 @@
 #define __OSINT_H
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
+#import <PVSupport/PVSupport.h>
 
 #define EMU_TIMER                   20			// milliseconds per frame
 #define DEFAULT_WIDTH               330 * 2

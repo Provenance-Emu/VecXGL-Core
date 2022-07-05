@@ -138,8 +138,8 @@ int LoadTGA (char *filename)			// Loads A TGA File Into Memory
 	if (g_overlay.width != 512 || g_overlay.height != 512)
 	{
 		GLubyte* newImageData = (GLubyte *)malloc(512*512*bytesPerPixel);		// Reserve Memory To Hold The RGB Data
-		gluScaleImage(GL_RGB, g_overlay.width, g_overlay.height, GL_UNSIGNED_BYTE, g_overlay.imageData, 
-						512, 512, GL_UNSIGNED_BYTE, newImageData);
+//		gluScaleImage(GL_RGB, g_overlay.width, g_overlay.height, GL_UNSIGNED_BYTE, g_overlay.imageData,
+//						512, 512, GL_UNSIGNED_BYTE, newImageData);
 		free(g_overlay.imageData);
 		g_overlay.imageData = newImageData;
 		g_overlay.width = 512;
@@ -150,11 +150,11 @@ int LoadTGA (char *filename)			// Loads A TGA File Into Memory
 	glGenTextures(1, &g_overlay.texID);					// Generate OpenGL texture IDs
 
 	glBindTexture(GL_TEXTURE_2D, g_overlay.texID);			// Bind Our Texture
-	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);	// Linear Filtered
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	// Linear Filtered
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
 	if (g_overlay.bpp==24)									// Was The TGA 24 Bits
 	{

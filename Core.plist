@@ -13,8 +13,8 @@
 		<string>com.provenance.vectrex</string>
 	</array>
 	<key>PVProjectURL</key>
-	<string></string>
+	<string>https://github.com/james7780/VecXGL</string>
 	<key>PVProjectVersion</key>
-	<string></string>
+	<string>1.2</string>
 </dict>
 </plist>

@@ -26,6 +26,12 @@
 #import "VectrexGameCore.h"
 #import "e8910.h"
 
+@import OpenGLES.gltypes;
+@import OpenGLES.ES1;
+@import OpenGLES.ES2;
+@import OpenGLES.ES3;
+@import GLKit;
+
 //typedefs for integers
 typedef uint8_t Uint8;
 typedef uint16_t Uint16;
@@ -197,37 +203,37 @@ void osint_render (void)
         // create texture
         glShadeModel(GL_SMOOTH);
         glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-        glClearDepth(1.0f);
+        glClearDepthf(1.0f);
         glBindTexture(GL_TEXTURE_2D, g_overlay.texID);
         //
 
 		GLfloat alpha = overlay_transparency;
-		glColor3f(alpha, alpha, alpha);
+//		glColor3f(alpha, alpha, alpha);
 		glEnable(GL_TEXTURE_2D);
-		glBegin(GL_QUADS);
+//		glBegin(GL_QUADS);
 			if (g_overlay.upsideDown)
 			{
-				glTexCoord2f(1, 1); //0.8f, 1);
-				glVertex2f(ALG_MAX_X, 0);
-				glTexCoord2f(0, 1); //0.2f, 1);
-				glVertex2f(0, 0);
-				glTexCoord2f(0, 0); //0.2f, 0);
-				glVertex2f(0, ALG_MAX_Y);
-				glTexCoord2f(1, 0); //0.8f, 0);
-				glVertex2f(ALG_MAX_X, ALG_MAX_Y);
+//				glTexCoord2f(1, 1); //0.8f, 1);
+//				glVertex2f(ALG_MAX_X, 0);
+//				glTexCoord2f(0, 1); //0.2f, 1);
+//				glVertex2f(0, 0);
+//				glTexCoord2f(0, 0); //0.2f, 0);
+//				glVertex2f(0, ALG_MAX_Y);
+//				glTexCoord2f(1, 0); //0.8f, 0);
+//				glVertex2f(ALG_MAX_X, ALG_MAX_Y);
 			}
 			else
 			{
-				glTexCoord2f(1, 0); //0.8f, 1);
-				glVertex2f(ALG_MAX_X, 0);
-				glTexCoord2f(0, 0); //0.2f, 1);
-				glVertex2f(0, 0);
-				glTexCoord2f(0, 1); //0.2f, 0);
-				glVertex2f(0, ALG_MAX_Y);
-				glTexCoord2f(1, 1); //0.8f, 0);
-				glVertex2f(ALG_MAX_X, ALG_MAX_Y);
+//				glTexCoord2f(1, 0); //0.8f, 1);
+//				glVertex2f(ALG_MAX_X, 0);
+//				glTexCoord2f(0, 0); //0.2f, 1);
+//				glVertex2f(0, 0);
+//				glTexCoord2f(0, 1); //0.2f, 0);
+//				glVertex2f(0, ALG_MAX_Y);
+//				glTexCoord2f(1, 1); //0.8f, 0);
+//				glVertex2f(ALG_MAX_X, ALG_MAX_Y);
 			}
-		glEnd();
+//		glEnd();
 		glDisable(GL_TEXTURE_2D);
 	} else {
 	    glClearColor( 0.0f, 0.0f, 0.0f, 0.0f );
@@ -237,14 +243,14 @@ void osint_render (void)
     // Select and setup the projection matrix
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
-	glOrtho( 0, -33000, 41000, 0, 1.0, 50.0 );
+//	glOrtho( 0, -33000, 41000, 0, 1.0, 50.0 );
 
     // Select and setup the modelview matrix
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();
-    gluLookAt( 0.0f, 0.0f, -10.0f,    // Eye-position
-               0.0f, 0.0f, 0.0f,   // View-point
-               0.0f, 1.0f, 0.0f );  // Up-vector
+//    gluLookAt( 0.0f, 0.0f, -10.0f,    // Eye-position
+//               0.0f, 0.0f, 0.0f,   // View-point
+//               0.0f, 1.0f, 0.0f );  // Up-vector
 
 	glEnable(GL_LINE_SMOOTH);
 	glLineWidth(line_width);
@@ -257,30 +263,30 @@ void osint_render (void)
 		glBlendFunc(GL_DST_COLOR, GL_ONE);
 	}
 
-    glBegin( GL_LINES );
+//    glBegin( GL_LINES );
 
 	// draw lines for this frame
 	for (v = 0; v < vector_draw_cnt; v++) {
 		c = VX_color_set[vectors_draw[v].color];
         
 		glColor4f( c, c, c, 0.75f );
-		glVertex3i( (int)vectors_draw[v].x0, (int)vectors_draw[v].y0, 0 );
-		glVertex3i( (int)vectors_draw[v].x1, (int)vectors_draw[v].y1, 0 );
+//		glVertex3i( (int)vectors_draw[v].x0, (int)vectors_draw[v].y0, 0 );
+//		glVertex3i( (int)vectors_draw[v].x1, (int)vectors_draw[v].y1, 0 );
 
 	}
 
-	glEnd();
+//	glEnd();
 
 	// we have to redraw points, because zero-length line doesn't get drawn
-	glBegin(GL_POINTS);
+//	glBegin(GL_POINTS);
 	for (v = 0; v < vector_draw_cnt; v++) {
 		c = VX_color_set[vectors_draw[v].color];
-		glColor3f( c,c,c );
-		glVertex3i( (int)vectors_draw[v].x0, (int)vectors_draw[v].y0, 0 );
-		glVertex3i( (int)vectors_draw[v].x1, (int)vectors_draw[v].y1, 0 );
+//		glColor3f( c,c,c );
+//		glVertex3i( (int)vectors_draw[v].x0, (int)vectors_draw[v].y0, 0 );
+//		glVertex3i( (int)vectors_draw[v].x1, (int)vectors_draw[v].y1, 0 );
 	}
 
-	glEnd();
+//	glEnd();
 
 	glDisable(GL_BLEND);
 
@@ -300,16 +306,16 @@ void osint_btnDown(PVVectrexButton btn) {
         case PVVectrexButton4:
             snd_regs[14] &= ~0x08;
             break;
-        case OEVectrexAnalogUp:
+        case PVVectrexAnalogUp:
             alg_jch1 = 0xFF;
             break;
-        case OEVectrexAnalogDown:
+        case PVVectrexAnalogDown:
             alg_jch1 = 0x00;
             break;
-        case OEVectrexAnalogLeft:
+        case PVVectrexAnalogLeft:
             alg_jch0 = 0x00;
             break;
-        case OEVectrexAnalogRight:
+        case PVVectrexAnalogRight:
             alg_jch0 = 0xFF;
             break;
         default:
@@ -331,16 +337,16 @@ void osint_btnUp(PVVectrexButton btn) {
         case PVVectrexButton4:
             snd_regs[14] |= 0x08;
             break;
-        case OEVectrexAnalogUp:
+        case PVVectrexAnalogUp:
             alg_jch1 = 0x80;
             break;
-        case OEVectrexAnalogDown:
+        case PVVectrexAnalogDown:
             alg_jch1 = 0x80;
             break;
-        case OEVectrexAnalogLeft:
+        case PVVectrexAnalogLeft:
             alg_jch0 = 0x80;
             break;
-        case OEVectrexAnalogRight:
+        case PVVectrexAnalogRight:
             alg_jch0 = 0x80;
             break;
         default:
@@ -360,7 +366,7 @@ void load_overlay(char *filename)
 
     glShadeModel(GL_SMOOTH);								// Enable Smooth Shading
     glClearColor(0.0f, 0.0f, 0.0f, 0.5f);					// Black Background
-    glClearDepth(1.0f);										// Depth Buffer Setup
+    glClearDepthf(1.0f);										// Depth Buffer Setup
     glBindTexture(GL_TEXTURE_2D, g_overlay.texID);		// Select Our Font Texture
     
     //glScissor(1	,64,637,288);								// Define Scissor Region

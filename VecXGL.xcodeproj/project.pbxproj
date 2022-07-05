@@ -22,11 +22,8 @@
 		B360FDDC276AF690009A0EB0 /* VecXGL.h in Headers */ = {isa = PBXBuildFile; fileRef = B360FDDB276AF690009A0EB0 /* VecXGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360FDF6276AF6D5009A0EB0 /* VecXGLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B360FDF5276AF6D5009A0EB0 /* VecXGLCore.m */; };
 		B360FDF7276AF6D5009A0EB0 /* VecXGLCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360FDF4276AF6D5009A0EB0 /* VecXGLCore.h */; };
-		B360FDFB276AF74E009A0EB0 /* osint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327616D40A9100BB38E2 /* osint.m */; };
 		B360FDFC276AF74E009A0EB0 /* e6809.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327216D40A9100BB38E2 /* e6809.c */; };
-		B360FDFD276AF74E009A0EB0 /* vecx.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327C16D40A9100BB38E2 /* vecx.m */; };
 		B360FDFE276AF74E009A0EB0 /* e8910.c in Sources */ = {isa = PBXBuildFile; fileRef = 982C135E17153B1500E47845 /* e8910.c */; };
-		B360FDFF276AF74E009A0EB0 /* loadTGA.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327516D40A9100BB38E2 /* loadTGA.c */; };
 		B360FE00276AF755009A0EB0 /* VectrexGameCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F325016D4014B00BB38E2 /* VectrexGameCore.m */; };
 		B360FE01276AF758009A0EB0 /* VectrexGameCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 986F324F16D4014B00BB38E2 /* VectrexGameCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360FE04276AF773009A0EB0 /* VecXGL.h in Headers */ = {isa = PBXBuildFile; fileRef = B360FDDB276AF690009A0EB0 /* VecXGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,10 +32,13 @@
 		B360FE10276AF777009A0EB0 /* e6809.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327216D40A9100BB38E2 /* e6809.c */; };
 		B360FE11276AF777009A0EB0 /* VecXGLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B360FDF5276AF6D5009A0EB0 /* VecXGLCore.m */; };
 		B360FE12276AF777009A0EB0 /* e8910.c in Sources */ = {isa = PBXBuildFile; fileRef = 982C135E17153B1500E47845 /* e8910.c */; };
-		B360FE13276AF777009A0EB0 /* osint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327616D40A9100BB38E2 /* osint.m */; };
-		B360FE14276AF777009A0EB0 /* loadTGA.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327516D40A9100BB38E2 /* loadTGA.c */; };
-		B360FE15276AF777009A0EB0 /* vecx.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327C16D40A9100BB38E2 /* vecx.m */; };
 		B360FE18276AF777009A0EB0 /* VecXGLCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360FDF4276AF6D5009A0EB0 /* VecXGLCore.h */; };
+		B3CE7FF82873F8AA00B6BB5A /* vecx.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327C16D40A9100BB38E2 /* vecx.m */; };
+		B3CE7FFA2873F8AD00B6BB5A /* vecx.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327C16D40A9100BB38E2 /* vecx.m */; };
+		B3CE7FFB2873F97A00B6BB5A /* osint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327616D40A9100BB38E2 /* osint.m */; };
+		B3CE7FFC2873F97A00B6BB5A /* osint.m in Sources */ = {isa = PBXBuildFile; fileRef = 986F327616D40A9100BB38E2 /* osint.m */; };
+		B3CE7FFD2873FB5100B6BB5A /* loadTGA.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327516D40A9100BB38E2 /* loadTGA.c */; };
+		B3CE7FFE2873FB5300B6BB5A /* loadTGA.c in Sources */ = {isa = PBXBuildFile; fileRef = 986F327516D40A9100BB38E2 /* loadTGA.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -451,7 +451,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CE7FFB2873F97A00B6BB5A /* osint.m in Sources */,
 				B360FE00276AF755009A0EB0 /* VectrexGameCore.m in Sources */,
+				B3CE7FF82873F8AA00B6BB5A /* vecx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,10 +463,8 @@
 			files = (
 				B360FDFC276AF74E009A0EB0 /* e6809.c in Sources */,
 				B360FDF6276AF6D5009A0EB0 /* VecXGLCore.m in Sources */,
+				B3CE7FFD2873FB5100B6BB5A /* loadTGA.c in Sources */,
 				B360FDFE276AF74E009A0EB0 /* e8910.c in Sources */,
-				B360FDFB276AF74E009A0EB0 /* osint.m in Sources */,
-				B360FDFF276AF74E009A0EB0 /* loadTGA.c in Sources */,
-				B360FDFD276AF74E009A0EB0 /* vecx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +472,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3CE7FFC2873F97A00B6BB5A /* osint.m in Sources */,
 				B360FE07276AF773009A0EB0 /* VectrexGameCore.m in Sources */,
+				B3CE7FFA2873F8AD00B6BB5A /* vecx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,10 +484,8 @@
 			files = (
 				B360FE10276AF777009A0EB0 /* e6809.c in Sources */,
 				B360FE11276AF777009A0EB0 /* VecXGLCore.m in Sources */,
+				B3CE7FFE2873FB5300B6BB5A /* loadTGA.c in Sources */,
 				B360FE12276AF777009A0EB0 /* e8910.c in Sources */,
-				B360FE13276AF777009A0EB0 /* osint.m in Sources */,
-				B360FE14276AF777009A0EB0 /* loadTGA.c in Sources */,
-				B360FE15276AF777009A0EB0 /* vecx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
