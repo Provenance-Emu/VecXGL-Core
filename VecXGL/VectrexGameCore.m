@@ -46,8 +46,7 @@ VectrexGameCore *g_core;
 
 @implementation VectrexGameCore
 
-- (id)init
-{
+- (id)init {
     if (self = [super init])
     {
         videoWidth = 330 * 2;
@@ -59,8 +58,7 @@ VectrexGameCore *g_core;
     return self;
 }
 
-- (BOOL)loadFileAtPath:(NSString *)path error:(NSError **)error
-{
+- (BOOL)loadFileAtPath:(NSString *)path error:(NSError **)error {
     romPath = path;
     osint_defaults();           //setup defaults including sound buffer
     openCart(path.fileSystemRepresentation);
@@ -83,13 +81,11 @@ VectrexGameCore *g_core;
     glFlush();
 }
 
-- (void)executeFrame
-{
+- (void)executeFrame {
     [self executeFrameSkippingFrame:NO];
 }
 
-- (void)startEmulation
-{
+- (void)startEmulation {
 //    if(self.rate != 0) return;
 
     [super startEmulation];

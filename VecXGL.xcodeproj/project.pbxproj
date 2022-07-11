@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B305F097276B6452003AE510 /* PVSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305F096276B6452003AE510 /* PVSupport.framework */; };
-		B305F098276B6452003AE510 /* PVSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B305F096276B6452003AE510 /* PVSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B305F09B276B645A003AE510 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305F09A276B645A003AE510 /* OpenGLES.framework */; platformFilter = ios; };
 		B305F09D276B6460003AE510 /* PVSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305F09C276B6460003AE510 /* PVSupport.framework */; };
-		B305F09E276B6460003AE510 /* PVSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B305F09C276B6460003AE510 /* PVSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B305F0A1276B6467003AE510 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305F0A0276B6467003AE510 /* OpenGLES.framework */; };
 		B305F0A2276B646F003AE510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F323B16D3FF4F00BB38E2 /* Foundation.framework */; };
 		B305F0A4276B6474003AE510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305F0A3276B6474003AE510 /* Foundation.framework */; };
@@ -19,6 +16,7 @@
 		B305F0A8276B6509003AE510 /* libVecXGL-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B360FE1C276AF777009A0EB0 /* libVecXGL-tvOS.a */; };
 		B305F107276B6C29003AE510 /* Core.plist in Resources */ = {isa = PBXBuildFile; fileRef = B305F106276B6C28003AE510 /* Core.plist */; };
 		B305F108276B6C29003AE510 /* Core.plist in Resources */ = {isa = PBXBuildFile; fileRef = B305F106276B6C28003AE510 /* Core.plist */; };
+		B3346E4928793E8F00F59972 /* PVSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3346E4828793E8F00F59972 /* PVSupport.framework */; };
 		B360FDDC276AF690009A0EB0 /* VecXGL.h in Headers */ = {isa = PBXBuildFile; fileRef = B360FDDB276AF690009A0EB0 /* VecXGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B360FDF6276AF6D5009A0EB0 /* VecXGLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = B360FDF5276AF6D5009A0EB0 /* VecXGLCore.m */; };
 		B360FDF7276AF6D5009A0EB0 /* VecXGLCore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B360FDF4276AF6D5009A0EB0 /* VecXGLCore.h */; };
@@ -59,28 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B305F099276B6452003AE510 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B305F098276B6452003AE510 /* PVSupport.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B305F09F276B6460003AE510 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B305F09E276B6460003AE510 /* PVSupport.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B360FDF0276AF6D5009A0EB0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +111,7 @@
 		B305F0A0276B6467003AE510 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		B305F0A3276B6474003AE510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B305F106276B6C28003AE510 /* Core.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Core.plist; sourceTree = SOURCE_ROOT; };
+		B3346E4828793E8F00F59972 /* PVSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PVSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360FDD9276AF690009A0EB0 /* PVVecXGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PVVecXGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B360FDDB276AF690009A0EB0 /* VecXGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VecXGL.h; sourceTree = "<group>"; };
 		B360FDF2276AF6D5009A0EB0 /* libVecXGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVecXGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,9 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B305F097276B6452003AE510 /* PVSupport.framework in Frameworks */,
 				B305F0A2276B646F003AE510 /* Foundation.framework in Frameworks */,
 				B305F0A5276B64FF003AE510 /* libVecXGL.a in Frameworks */,
+				B3346E4928793E8F00F59972 /* PVSupport.framework in Frameworks */,
 				B305F09B276B645A003AE510 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +187,7 @@
 		986F323516D3FF4F00BB38E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3346E4828793E8F00F59972 /* PVSupport.framework */,
 				B305F0A3276B6474003AE510 /* Foundation.framework */,
 				B305F0A0276B6467003AE510 /* OpenGLES.framework */,
 				B305F09C276B6460003AE510 /* PVSupport.framework */,
@@ -258,20 +236,20 @@
 		986F327016D40A6300BB38E2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				986F327616D40A9100BB38E2 /* osint.m */,
-				986F327716D40A9100BB38E2 /* osint.h */,
-				986F327C16D40A9100BB38E2 /* vecx.m */,
-				986F327D16D40A9100BB38E2 /* vecx.h */,
 				986F327216D40A9100BB38E2 /* e6809.c */,
-				986F327316D40A9100BB38E2 /* e6809.h */,
 				982C135E17153B1500E47845 /* e8910.c */,
-				982C135F17153B1500E47845 /* e8910.h */,
-				986F327116D40A9100BB38E2 /* bios.h */,
 				986F327416D40A9100BB38E2 /* loadPNG.c */,
 				986F327516D40A9100BB38E2 /* loadTGA.c */,
+				986F327116D40A9100BB38E2 /* bios.h */,
+				986F327316D40A9100BB38E2 /* e6809.h */,
+				982C135F17153B1500E47845 /* e8910.h */,
+				986F327716D40A9100BB38E2 /* osint.h */,
 				986F327816D40A9100BB38E2 /* overlay.h */,
-				986F327916D40A9100BB38E2 /* readme_old.txt */,
+				986F327D16D40A9100BB38E2 /* vecx.h */,
 				986F327E16D40A9100BB38E2 /* wnoise.h */,
+				986F327616D40A9100BB38E2 /* osint.m */,
+				986F327C16D40A9100BB38E2 /* vecx.m */,
+				986F327916D40A9100BB38E2 /* readme_old.txt */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -325,7 +303,6 @@
 				B360FDD5276AF690009A0EB0 /* Sources */,
 				B360FDD6276AF690009A0EB0 /* Frameworks */,
 				B360FDD7276AF690009A0EB0 /* Resources */,
-				B305F099276B6452003AE510 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,7 +339,6 @@
 				B360FE06276AF773009A0EB0 /* Sources */,
 				B360FE08276AF773009A0EB0 /* Frameworks */,
 				B360FE09276AF773009A0EB0 /* Resources */,
-				B305F09F276B6460003AE510 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

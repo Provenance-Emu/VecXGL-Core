@@ -25,7 +25,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <PVSupport/PVSupport.h>
+@import PVSupport;
 
 __attribute__((visibility("default")))
 @interface VectrexGameCore : PVEmulatorCore <PVVectrexSystemResponderClient> {
